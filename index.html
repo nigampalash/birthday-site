@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Happy Birthday ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg,#ff758c,#ff7eb3);
+      font-family: Arial;
+      overflow: hidden;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      text-align: center;
+      max-width: 600px;
+    }
+
+    button {
+      padding: 12px 20px;
+      border: none;
+      border-radius: 20px;
+      background: #ff4f81;
+      color: white;
+      cursor: pointer;
+    }
+
+    #msg {
+      margin-top: 20px;
+      white-space: pre-wrap;
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="card">
+  <h1>🎂 Happy Birthday, My Love ❤️</h1>
+
+  <button onclick="show()">Open Surprise 💌</button>
+
+  <div id="msg"></div>
+</div>
+
+<script>
+const text = `Happy Birthday, baby ❤️
+
+Thank you for being my happiness,
+my safe place, and my love.
+
+I am so grateful for you.
+
+I love you so much ❤️`;
+
+function show(){
+  const msg = document.getElementById("msg");
+  msg.style.display = "block";
+
+  let i = 0;
+  msg.innerHTML = "";
+
+  function type(){
+    if(i < text.length){
+      msg.innerHTML += text[i] === "\n" ? "<br>" : text[i];
+      i++;
+      setTimeout(type, 50);
+    }
+  }
+
+  type();
+}
+</script>
+
+</body>
+</html>
